@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Note.apps.NoteConfig',
+    # 应用程序
+    'LearningNote',
 ]
 
 MIDDLEWARE = [
