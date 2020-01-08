@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<p>
+<h3>
+    <a href="{% url 'LearningNote:index' %}">学习笔记</a> -
+    <a href="{% url 'LearningNote:topics' %}">主题</a>
+</h3>
+</p>
+{% block content %}
+
+{% endblock content %}
+
+</body>
+</html>
