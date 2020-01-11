@@ -11,6 +11,13 @@
     <a href="{% url 'LearningNote:index' %}">学习笔记</a> -
     <a href="{% url 'LearningNote:topics' %}">主题</a>
 </h3>
+{% if user.is_authenticated %}
+    欢迎, {{ user.username }}.
+    <a href="{% url 'Users:logout' %}">注销</a>
+{% else %}
+    <a href="{% url 'Users:register' %}">注册</a>
+    <a href="{% url 'Users:login' %}">登录</a>
+{% endif %}
 </p>
 {% block content %}
 

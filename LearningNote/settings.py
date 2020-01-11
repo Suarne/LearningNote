@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'Note.apps.NoteConfig',
     # 应用程序
     'LearningNote',
+    'Users',
 ]
 
 MIDDLEWARE = [
