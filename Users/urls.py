@@ -11,6 +11,6 @@ urlpatterns = [
     # sign out
     url(r'^logout/$', views.logout_view, name='logout'),
     # register
-    url(r'^regidter/$', views.register, name='register'),
+    url(r'^register/$', views.register, name='register'),
 ]
 app_name = 'Users'
