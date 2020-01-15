@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     # 应用程序
     'LearningNote',
     'Users',
+    # 第三方应用程序
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -118,4 +120,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# 我的设置
 LOGIN_URL = '/Users/login/'
+
+# django-bootstrap3的设置
+BOOTSTRAPS = {
+    'include_jquery': True,
+}

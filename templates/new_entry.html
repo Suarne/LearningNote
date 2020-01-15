@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2><a href="{% url 'LearningNote:topic' topic.id %}">{{ topic }}</a></h2>
+{% endblock %}
 
 {% block content %}
 
-    <p><a href="{% url 'LearningNote:topic' topic.id %}">{{ topic }}</a></p>
-
-    <p>添加新笔记</p>
-    <form action="{% url 'LearningNote:new_entry' topic.id %}" method="post">
+    <form method="post" action="{% url 'LearningNote:new_entry' topic.id %}" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">添加</button>
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">添加</button>
+        {% endbuttons %}
+
+        <input type="hidden" name="next" value="{% url 'LearningNote:index' %}"/>
     </form>
 
-{% endblock content %}
+{% endblock %}

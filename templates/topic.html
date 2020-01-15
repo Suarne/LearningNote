@@ -1,23 +1,30 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <h2>{{ topic }}</h2>
+{% endblock %}
+
 {% block content %}
 
-    <p>主题：{{ topic }}</p>
-
-    <p>笔记：</p>
     <p><a href="{% url 'LearningNote:new_entry' topic.id %}">添加新笔记</a></p>
-    <ul>
-        {% for entry in entries %}
-            <li>
-                <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
-                <p>{{ entry.text|linebreaks }}</p>
-                <p><a href="{% url 'LearningNote:edit_entry' entry.id %}">修改学习记录</a></p>
-            </li>
-        {% empty %}
-            <li>
-                这个主题还没有添加新笔记.
-            </li>
-        {% endfor %}
-    </ul>
+    {% for entry in entries %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>
+                    {{ entry.date_added|date:'M d, Y H:i' }}
+                    <small>
+                        <a href="{% url 'LearningNote:edit_entry' entry.id %}">修改学习记录</a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body">
+                {{ entry.text|linebreaks }}
+            </div>
+        </div>
+    {% empty %}
+        <li>
+            这个主题还没有添加新笔记.
+        </li>
+    {% endfor %}
 
-{% endblock content %}
+{% endblock %}

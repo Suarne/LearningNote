@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <div class="jumbotron">
+        <h2>追踪记录你的学习</h2>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <p>学习笔记</p>
-
-    <p>学习笔记可以帮助你记录你的知识亮点，整理知识框架，适用于任何内容</p>
-
+    <h3>
+        <a href="{% url 'Users:register' %}">注册一个账号</a>, 创建属于你自己的学习笔记, 并按主题分类管理
+    </h3>
+    <h3>无论何时何地, 只要你有新知识, 快速记录并提交, 完善属于你自己的学习历程</h3>
 {% endblock content %}
